@@ -10,8 +10,8 @@ PUERTO_SERIAL = '/dev/serial0'
 BAUDIOS = 115200
 
 # RANGOS (Ajustado para ignorar el piso a 159cm)
-RANGO_MIN = 40     
-RANGO_MAX = 150    
+RANGO_MIN = 20     
+RANGO_MAX = 210    
 
 # --- LUCES LED ---
 LED_COUNT      = 1200     # 20 metros
