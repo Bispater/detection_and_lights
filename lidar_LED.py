@@ -83,26 +83,10 @@ def limpiar_luces():
     strip.show()
 
 def efecto_standby_suave():
-    """Luz tenue que 'respira' sin saturar el canal de datos"""
-    tiempo = time.time()
-    
-    # 1. Hacemos la respiración más suave y lenta (multiplicamos por 1.5)
-    brillo = int(30 + 20 * math.sin(tiempo * 1.5)) 
-    
-    # 2. Usamos un Azul o Verde suave (evitamos el blanco)
-    color_suave = Color(0, brillo, 0) # Esto es un verde suave. Cámbialo si prefieres.
-    
-    # 3. Pintamos TODOS los LEDs iguales, eliminando el ruido eléctrico del "i % 2"
-    for i in range(strip.numPixels()):
-        strip.setPixelColor(i, color_suave)
-        
-    strip.show()
-    
-    # 4. EL SECRETO DE ESTADO: Una micropausa. 
-    # Esto limita el efecto a unos 30 cuadros por segundo, 
-    # dándole tiempo al cable verde para "limpiarse" antes del siguiente dato.
-    time.sleep(0.03)
-    
+    """Modo reposo: Luces totalmente apagadas esperando al cliente"""
+    limpiar_luces()  # Usa la función que ya tienes para apagar todo
+    time.sleep(0.1)  # Pausa corta para no saturar el procesador
+
 def efecto_cargando(progreso):
     """Barra de carga que se llena (Color Ámbar/Dorado)"""
     total = strip.numPixels()
