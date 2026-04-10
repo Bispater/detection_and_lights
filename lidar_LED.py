@@ -48,6 +48,7 @@ print(f"Rango: {RANGO_MIN}-{RANGO_MAX}cm")
 # 1. Iniciar Luces
 strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
 strip.begin()
+limpiar_luces()
 
 # 2. Iniciar Sensor
 try:
@@ -83,9 +84,8 @@ def limpiar_luces():
     strip.show()
 
 def efecto_standby_suave():
-    """Modo reposo: Luces totalmente apagadas esperando al cliente"""
-    limpiar_luces()  # Usa la función que ya tienes para apagar todo
-    time.sleep(0.1)  # Pausa corta para no saturar el procesador
+    """Modo reposo ultra ligero. Las luces ya están apagadas, solo descansamos un poco"""
+    time.sleep(0.02)  # Pausa cortísima (20ms) para no quemar CPU, manteniendo al sensor ultra rápido
 
 def efecto_cargando(progreso):
     """Barra de carga que se llena (Color Ámbar/Dorado)"""
