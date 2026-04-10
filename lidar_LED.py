@@ -48,7 +48,6 @@ print(f"Rango: {RANGO_MIN}-{RANGO_MAX}cm")
 # 1. Iniciar Luces
 strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
 strip.begin()
-limpiar_luces()
 
 # 2. Iniciar Sensor
 try:
@@ -105,6 +104,7 @@ def poner_color_solido(color):
     strip.show()
 
 # ================= PRINCIPAL =================
+limpiar_luces()
 ESTADO = "ESPERANDO" # Estados: ESPERANDO, CARGANDO, COOLDOWN
 inicio_validacion = 0
 inicio_cooldown = 0
