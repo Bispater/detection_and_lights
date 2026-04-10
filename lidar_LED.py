@@ -23,7 +23,7 @@ LED_INVERT     = False
 LED_CHANNEL    = 0
 
 # --- RED UDP ---
-UDP_IP = "172.16.70.159"
+UDP_IP = "172.16.70.160"
 UDP_PORT = 5000
 
 # --- TIEMPOS ---
