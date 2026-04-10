@@ -86,8 +86,8 @@ def efecto_standby_suave():
     """Luz blanca tenue que 'respira' mientras espera clientes"""
     tiempo = time.time()
     # Oscila el brillo entre 20 y 60
-    brillo = int(40 + 20 * math.sin(tiempo * 2)) 
-    color_suave = Color(brillo, brillo, brillo)
+    brillo = int(45 + 25 * math.sin(tiempo * 2)) 
+    color_suave = Color(0, 0, brillo)
     
     for i in range(strip.numPixels()):
         # Encendemos 1 de cada 2 leds para ser sutil
